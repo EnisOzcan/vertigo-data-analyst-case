@@ -156,6 +156,33 @@ If the goal is long-term growth and LTV expansion:
 While the temporary sale generates stronger short-term gains, structural retention improvements create substantially higher long-term enterprise value.
 
 ---
+# 90-Day Analysis (Bonus)
+
+To better understand the long-term dynamics, we extended the analysis to a 90-day horizon and compared all three scenarios:
+
+- Baseline (original setup)
+- Temporary 10-day sale
+- New permanent user source
+
+### Baseline Scenario
+Under the original setup, the cumulative revenue curves reach a break-even point around Day 33. After this point, Variant B begins to generate higher cumulative revenue than Variant A due to its stronger long-term retention decay structure.
+
+![Cumulative revenue (90d)](outputs/figures/cumulative_revenue_90d.png)
+
+### Sale Scenario
+The temporary 10-day sale accelerates revenue generation and shifts the break-even point earlier. However, this effect is short-lived. Since the sale does not modify the underlying retention curve, its long-term impact remains limited.
+
+### New User Source Scenario
+The introduction of a new permanent user source structurally improves retention characteristics. Although the short-term uplift is smaller than the sale scenario, the long-term revenue impact compounds significantly over time.
+
+### Conclusion
+While the sale provides a short-term monetization boost, the new user source generates stronger long-term value due to improved retention compounding. From a strategic perspective, structural retention improvements create more sustainable revenue growth than temporary monetization tactics.
+
+
+![90-day lift comparion)](outputs/figures/90-day_lift_comparison.png)
+
+
+---
 
 #  How to Reproduce
 
