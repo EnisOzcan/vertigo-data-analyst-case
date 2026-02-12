@@ -91,7 +91,7 @@ The analysis follows a structured modeling approach:
 
 Variant B surpasses Variant A in DAU after approximately Day 15 due to slower retention decay.
 
-[outputs/figures/dau_30d.png]
+![DAU Comparison (30 Days)](outputs/figures/dau_30d.png)
 
 ---
 
@@ -127,7 +127,7 @@ By Day 30, Variant B generates more cumulative revenue. İt is different outcome
 
 This shows that monetization improvements interact strongly with retention structure.
 
- *[outputs/figures/Task 1d — Cumulative Revenue with 10-day Sale.png]*
+ ![Cumulative Revenue with 10-day Sale](outputs/figures/task1d_cumulative_sale.png)
 
 ---
 
@@ -139,7 +139,7 @@ Under this mixed acquisition model, Variant A remains ahead in cumulative revenu
 
 Compared to the 10-day sale scenario (Task 1d), total revenue is lower for both variants because the temporary purchase-rate uplift is not present in this scenario.
 
- *[outputs/figures/Task 1e — Cumulative Revenue with Mixed User Source.png]*
+![Cumulative Revenue with Mixed User Source](outputs/figures/task1e_mixed_source.png)
 
 ---
 
