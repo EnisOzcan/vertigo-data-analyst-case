@@ -127,7 +127,7 @@ By Day 30, Variant B generates more cumulative revenue. İt is different outcome
 
 This shows that monetization improvements interact strongly with retention structure.
 
- ![Cumulative Revenue with 10-day Sale](outputs/figures/task1d_cumulative_sale.png)
+![Cumulative Revenue with 10-day Sale](outputs/figures/task1d_cumulative_sale.png)
 
 ---
 
@@ -139,7 +139,7 @@ Under this mixed acquisition model, Variant A remains ahead in cumulative revenu
 
 Compared to the 10-day sale scenario (Task 1d), total revenue is lower for both variants because the temporary purchase-rate uplift is not present in this scenario.
 
-![Cumulative Revenue with Mixed User Source](outputs/figures/task1e_mixed_source.png)
+![Cumulative Revenue with Mixed User Source](outputs/figures/task1e_cumulative_revenue_mixed_source.png)
 
 ---
 
