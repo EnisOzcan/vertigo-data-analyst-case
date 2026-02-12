@@ -20,6 +20,7 @@ To determine:
 
 ## Project Structure
 
+```text
 vertigo-data-analyst-case/
 │
 ├── notebooks/
@@ -37,7 +38,7 @@ vertigo-data-analyst-case/
 │ └── figures/
 │
 └── README.md
-
+```
 
 - `src/` contains reusable simulation modules
 - `notebooks/` contains structured analysis
@@ -91,6 +92,7 @@ The analysis follows a structured modeling approach:
 Variant B surpasses Variant A in DAU after approximately Day 15 due to slower retention decay.
 
 [outputs/figures/dau_30d.png]
+
 ---
 
 ## (b) Revenue by Day 15
@@ -99,7 +101,8 @@ By Day 15, Variant A generates higher cumulative revenue due to stronger early r
 
 **Winner (Day 15): Variant A**
 
-[outputs/figures/cumulative_revenue_30d.png]
+![Cumulative revenue (30d)](outputs/figures/cumulative_revenue_30d.png)
+
 ---
 
 ## (c) Revenue by Day 30
@@ -108,7 +111,8 @@ By Day 30, Variant A still leads in cumulative revenue, although the gap narrows
 
 **Winner (Day 30): Variant A**
 
-[outputs/figures/cumulative_revenue_30d.png]
+![Cumulative revenue (30d)](outputs/figures/cumulative_revenue_30d.png)
+
 ---
 
 ## (d) 10-Day Sale Scenario
