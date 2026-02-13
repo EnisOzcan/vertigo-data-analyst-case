@@ -14,3 +14,10 @@ VARIANTS = {
 }
 
 DAILY_INSTALLS = 20000
+
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_RAW_DIR = PROJECT_ROOT / "data" / "raw"
+DATA_PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"

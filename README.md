@@ -2,6 +2,49 @@
 
 This repository contains my solution to the Vertigo Games Data Analyst case study.
 
+## Project Structure
+
+```text
+vertigo-data-analyst-case/
+│
+├── data/
+│ ├── raw/
+│ ├── processed/
+│
+│
+├── notebooks/
+│ ├── 01_task1_ab_simulation.ipynb
+│ └── 02_task2_eda.ipynb
+│
+├── src/
+│ ├── config.py
+│ ├── retention.py
+│ ├── simulation.py
+│ ├── revenue.py
+│ └── __init__.py
+│ └── cleaning.py
+│ └── segmentation.py
+│ └── features.py
+│ └── io.py
+│ └── task2_viz.py
+│ └── viz.py
+│ 
+│ 
+│
+├── outputs/
+│ └── figures/
+│
+└── README.md
+```
+
+- `src/` contains reusable simulation modules
+- `notebooks/` contains structured analysis
+- `outputs/figures/` stores exported visualizations
+
+---
+
+# Task 1 
+
 The analysis evaluates two game variants (A and B) using cohort-based simulation, retention modeling, and revenue forecasting to determine both short-term and long-term performance.
 
 ---
@@ -18,33 +61,7 @@ To determine:
 
 ---
 
-## Project Structure
 
-```text
-vertigo-data-analyst-case/
-│
-├── notebooks/
-│ ├── 01_task1_ab_simulation.ipynb
-│ └── 02_task2_eda.ipynb
-│
-├── src/
-│ ├── config.py
-│ ├── retention.py
-│ ├── simulation.py
-│ ├── revenue.py
-│ └── viz.py
-│
-├── outputs/
-│ └── figures/
-│
-└── README.md
-```
-
-- `src/` contains reusable simulation modules
-- `notebooks/` contains structured analysis
-- `outputs/figures/` stores exported visualizations
-
----
 
 # Methodology
 
@@ -180,6 +197,227 @@ While the sale provides a short-term monetization boost, the new user source gen
 
 
 ![90-day lift comparion)](outputs/figures/90-day_lift_comparison.png)
+
+
+# Task 2 Exploratory Analysis & User Segmentation
+
+
+## Objective
+
+The objective of Task 2 is to analyze user behavior patterns, engagement trends, monetization structure, and platform performance using real gameplay telemetry data.
+
+### The analysis focuses on: ###
+
+    User lifecycle behavior
+
+    First-day engagement segmentation
+
+    Retention differences between segments
+
+    Revenue contribution by segment
+
+    Country-level monetization potential
+
+    Platform-level performance comparison
+
+    Session duration trends over time
+
+    Data Preparation & Engineering
+
+To ensure clean and reproducible analysis, the workflow was modularized under the src/ directory.
+
+### Data Loading ###
+ 
+Multiple .csv.gz files were automatically loaded and concatenated using a reusable io.py module.
+
+Data was stored at user-day level.
+
+### Cleaning ###
+
+Using cleaning.py:
+
+Date columns parsed and standardized.
+
+Numeric columns validated.
+
+Missing country values handled.
+
+Data types optimized for performance.
+
+### Feature Engineering ###
+
+Using features.py, additional analytical features were created:
+
+total_revenue = iap_revenue + ad_revenue
+
+days_since_install
+
+victory_rate
+
+avg_session_duration
+
+conn_error_per_session
+
+These features enabled lifecycle analysis and behavior-based segmentation.
+
+### Cohort-Based First-Day Segmentation ###
+
+To avoid bias from long-term legacy users, analysis focused on a new install cohort within the observed time window.
+
+Users were segmented based on Day 0 (D0) behavior:
+
+#### Segments Defined ####
+
+IAP Monetizer – made in-app purchase on D0
+
+Competitive – ≥5 matches and high victory rate
+
+Highly Engaged – top 25% session duration
+
+Casual – moderate engagement
+
+Early Drop-off Risk – low sessions and low duration
+
+#### Segment Distribution ####
+
+Early Drop-off Risk: ~43%
+
+Competitive: ~27%
+
+Casual: ~26%
+
+Highly Engaged: ~2.5%
+
+IAP Monetizer: ~0.4%
+
+This shows that nearly half of new users exhibit low first-day engagement.
+
+### Retention Analysis (D1) ###
+
+Retention strongly varies by segment:
+
+IAP Monetizer: ~65%
+
+Competitive: ~54%
+
+Highly Engaged: ~49%
+
+Casual: ~32%
+
+Early Drop-off Risk: ~19%
+
+#### Insight ####
+
+Competitive behavior and early monetization strongly correlate with retention.
+First-day engagement is highly predictive of next-day activity.
+
+### Revenue Contribution by Segment ###
+
+Revenue distribution across segments shows:
+
+Competitive users generate the largest share of total revenue (~42%)
+
+IAP Monetizers contribute ~38% despite representing <1% of users
+
+Early Drop-off users contribute <7% of revenue
+
+#### Strategic Insight ####
+
+While whales (IAP Monetizers) generate high ARPU, Competitive users drive the largest portion of revenue due to their size and strong retention.
+
+This suggests that strengthening competitive gameplay mechanics may yield scalable monetization improvements.
+
+Session Duration Lifecycle Trends
+
+Session duration was analyzed across days_since_install.
+
+#### Findings: ####
+
+Initial drop between Days 2–5
+
+Gradual increase over time
+
+Both mean and median trends increase
+
+Interpretation
+
+This indicates a healthy lifecycle pattern:
+
+Early filtering of low-engagement users
+
+Increasing engagement among retained users
+
+Evidence of habit formation over time
+
+Segment-based lifecycle analysis confirmed that Competitive and Monetizer users maintain consistently higher session duration.
+
+### Country-Level Monetization Analysis ###
+
+To prioritize potential localization investment, countries were evaluated based on:
+
+User volume
+
+Revenue contribution
+
+ARPU
+
+#### Key observations: ####
+
+United States contributes the largest revenue share.
+
+South Korea exhibits exceptionally high ARPU.
+
+Brazil and Türkiye have high user volume but low ARPU.
+
+#### Strategic Implication ####
+
+South Korea represents a monetization-focused opportunity,
+while Brazil and Türkiye offer scalable growth potential if localization improves retention and conversion.
+
+Platform Performance Comparison (iOS vs Android)
+
+Metrics analyzed:
+
+User volume
+
+Average session duration
+
+Match completion rate
+
+Win rate
+
+Error rate
+
+ARPU
+
+#### Key findings: ####
+
+Android has significantly larger user base.
+
+iOS users demonstrate higher engagement and ~3x higher ARPU.
+
+Technical stability (error rate and completion rate) is similar across platforms.
+
+#### Strategic Insight ####
+
+iOS is the stronger monetization platform,
+while Android offers scale advantage and growth potential through engagement optimization.
+
+### Overall Task 2 Conclusion ###
+
+The analysis demonstrates:
+
+First-day engagement strongly predicts retention and revenue.
+
+Competitive behavior is a key monetization driver.
+
+Revenue is not solely dependent on whales; engagement-driven segments contribute significantly.
+
+Engagement increases over lifecycle among retained users.
+
+Monetization strategies should differ across platforms and countries.
+
+This structured approach integrates behavioral segmentation, lifecycle analytics, monetization modeling, and platform comparison to inform data-driven product decisions.
 
 
 ---
