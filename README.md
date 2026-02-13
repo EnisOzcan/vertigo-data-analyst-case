@@ -311,6 +311,8 @@ Early Drop-off Risk: ~19%
 Competitive behavior and early monetization strongly correlate with retention.
 First-day engagement is highly predictive of next-day activity.
 
+![Segment distributions](outputs/figures/Segment_distributions.png)
+
 ### Revenue Contribution by Segment ###
 
 Revenue distribution across segments shows:
@@ -327,9 +329,13 @@ While whales (IAP Monetizers) generate high ARPU, Competitive users drive the la
 
 This suggests that strengthening competitive gameplay mechanics may yield scalable monetization improvements.
 
-Session Duration Lifecycle Trends
+![Revenu share by segment](outputs/figures/Revenue_share_by_segment.png)
+
+
+### Session Duration Lifecycle Trends ###
 
 Session duration was analyzed across days_since_install.
+
 
 #### Findings: ####
 
@@ -351,15 +357,17 @@ Evidence of habit formation over time
 
 Segment-based lifecycle analysis confirmed that Competitive and Monetizer users maintain consistently higher session duration.
 
+![Average Session Duration by Days Since Install](outputs/figures/Average_Session_Duration_by_Days_Since_Install.png)
+
 ### Country-Level Monetization Analysis ###
 
 To prioritize potential localization investment, countries were evaluated based on:
+    
+    User volume
 
-User volume
+    Revenue contribution
 
-Revenue contribution
-
-ARPU
+    ARPU
 
 #### Key observations: ####
 
@@ -374,21 +382,21 @@ Brazil and Türkiye have high user volume but low ARPU.
 South Korea represents a monetization-focused opportunity,
 while Brazil and Türkiye offer scalable growth potential if localization improves retention and conversion.
 
-Platform Performance Comparison (iOS vs Android)
+### Platform Performance Comparison (iOS vs Android) ###
 
 Metrics analyzed:
 
-User volume
+    User volume
 
-Average session duration
+    Average session duration
 
-Match completion rate
+    Match completion rate
 
-Win rate
+    Win rate
 
-Error rate
+    Error rate
 
-ARPU
+    ARPU
 
 #### Key findings: ####
 
