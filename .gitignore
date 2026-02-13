@@ -3,3 +3,12 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 data/processed/
+
+# data
+data/raw/
+data/processed/
+data/*.csv
+data/*.csv.gz
+data/**/*.csv
+data/**/*.csv.gz
+.DS_Store
