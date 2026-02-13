@@ -7,10 +7,6 @@ This repository contains my solution to the Vertigo Games Data Analyst case stud
 ```text
 vertigo-data-analyst-case/
 │
-├── data/
-│ ├── raw/
-│ ├── processed/
-│
 │
 ├── notebooks/
 │ ├── 01_task1_ab_simulation.ipynb
